@@ -1,20 +1,84 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style>
+
+  img {
+    
+    margin-top: 0px;
+    
+   
+    margin-left: 0px;
+   
+}
+
+
+</style>
+<body >
+    <img src="..\assets\image\logo3.png"/> 
+  
+welcome {{cookieValue}}
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">SkillMapping</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#" class="glyphicon glyphicon-home">Home</a></li>
+      <li><a routerLink="/register" class="glyphicon glyphicon-user">Register</a></li>
+      <li><a  routerLink="/login"  class="glyphicon glyphicon-log-in" >Login</a></li>
+    
+     <!-- <li><a routerLink="/listall"  class="glyphicon glyphicon-list-alt" >list All</a></li>-->
+      <li><a routerLink="/update"  class="glyphicon glyphicon-pencil" >Update</a></li>
+      <li><a routerLink="/delete"  class="glyphicon glyphicon-remove" >Delete</a></li>
+      <li><a routerLink="/logout"  class="glyphicon glyphicon-log-out" >Logout</a></li>     
+    </ul>
+  </div>
+</nav>
+  
+<div class="container">
+  
+  
+</div>
+
+
+
+<style>
+    h1{
+          font-family: 'Fontdiner Swanky';font-size: 120px;
+      
+    }
+    .input-container form,
+    .input-container form div {
+        display: inline;
+    }
+    
+    .input-container button {
+        display: inline;
+        vertical-align: middle;
+    }
+    input.searc {
+        width: 10em;  height: 2em;
+    }
+    img{
+      width:25%;
+      height: 25%;
+    }
+    </style>
+    
+    
+    
+    
+   
+     <router-outlet></router-outlet>
+     </body>
+     </html>

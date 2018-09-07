@@ -1,0 +1,176 @@
+
+<html>
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <title>User Registration Form</title>
+  </head>
+  <style>
+    #old{
+    height: 10%px;
+    width: 30%;
+    background-color: goldenrod;
+
+  }
+
+  </style>
+  <body>
+  
+  <div class="container" id="old">
+    <h2>User Registration</h2>
+      <form #myForm="ngForm" action=""  method="post">
+         
+        <label for="firstName" >Employee Name</label>
+         <input type="text" [(ngModel)]="employee.firstName"  class="form-control" id="firstName" placeholder="Enter Name" name="firstName" #firstName="ngModel" required>
+         <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
+         >
+     
+       <span *ngIf="firstName.errors.required"style="color:red">
+         Name is required.
+       </span>
+      </div>     
+      
+        
+        <label for="lastName">Last Name</label>
+        <input type="text" [(ngModel)]="employee.lastName" class="form-control" id="lastName" placeholder="Enter Last Name" name="lastName" #lastName="ngModel" required>
+        <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)"
+        >
+    
+      <span *ngIf="lastName.errors.required"style="color:red">
+        last Name is required.
+      </span>
+     </div>     
+     
+      
+        <label for="emailid">EmailId</label>
+        <input type="email" class="form-control" id="emailid" placeholder="Email Id" name="emailId"
+        required                 pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" #emailId="ngModel" [(ngModel)]="employee.emailId">
+        <div *ngIf="emailId.invalid && (emailId.dirty || emailId.touched)"
+        >
+    
+      <span *ngIf="emailId.errors.required"style="color:red">
+        Email Id is required.
+      </span>
+      <div  *ngIf="emailId.errors && emailId.errors.pattern" style="color:red">
+        Email is invalid
+    </div>
+
+     </div>     
+      
+        <label for="contactNo">Mobile</label>
+        <input type="text" [(ngModel)]="employee.contactNo" class="form-control" id="contactNo" placeholder="Enter Mobile Number" name="contactNo" #contactNo="ngModel"required>
+        <div *ngIf="contactNo.invalid && (contactNo.dirty || contactNo.touched)"
+        >
+    
+      <span *ngIf="contactNo.errors.required"style="color:red">
+        mobile no is required.
+      </span>
+     </div>     
+     
+        <label for="password">Password</label>
+        <input type="password" [(ngModel)]="employee.password" class="form-control" id="password" placeholder="Enter Password" name="password" #password="ngModel" required> 
+      
+        <div *ngIf="password.invalid && (password.dirty || password.touched)"
+        >
+    
+      <span *ngIf="password.errors.required"style="color:red">
+        password is required.
+      </span>
+     </div>     
+        <label for="date_of_joining">Date Of Joining</label>
+        <input type="date" [(ngModel)]="employee.date_of_joining" class="form-control" id="date_of_joining" placeholder="enter date" name="date_of_joining" #date_of_joining="ngModel" required> 
+        <div *ngIf="date_of_joining.invalid && (date_of_joining.dirty || date_of_joining.touched)"
+        >
+    
+      <span *ngIf="date_of_joining.errors.required"style="color:red">
+        date of joining is required.
+      </span>
+     </div>     
+        
+        <label for="cpass">Gender</label><br>
+        <input type="radio" name="gender"[(ngModel)]="employee.gender" value="male" checked> Male
+         <input type="radio" name="gender" [(ngModel)]="employee.gender" value="female"> Female<br>
+      
+        <label for="certification">Certificate</label>
+        <input type="text" [(ngModel)]="employee.certification" class="form-control" id="certification" placeholder="Enter Certification " name="certification" #certification="ngModel" required>
+        <div *ngIf="certification.invalid && (certification.dirty || certification.touched)"
+        >
+    
+      <span *ngIf="certification.errors.required"style="color:red">
+        certification is required.
+      </span>
+     </div>     
+      
+        <label for="skill">skill</label>
+        <input type="text" [(ngModel)]="employee.skill" class="form-control" id="skill" placeholder="Enter Skills " name="skill" #skill="ngModel" required>
+      
+        <div *ngIf="skill.invalid && (skill.dirty || skill.touched)"
+        >
+    
+      <span *ngIf="skill.errors.required"style="color:red">
+        skill is required.
+      </span>
+     </div>     
+     
+        <label for="proLocation">Address</label>
+        <input type="text" [(ngModel)]="employee.proLocation"class="form-control" id="proLocation" placeholder="Enter Present Location " name="proLocation"#proLocation="ngModel" required>
+   
+        <div *ngIf="proLocation.invalid && (proLocation.dirty || proLocation.touched)"
+        >
+    
+      <span *ngIf="proLocation.errors.required"style="color:red">
+        present Location is required.
+      </span>
+     </div>     
+        <label for="role">Role</label><br>
+        <input type="radio" name="role"[(ngModel)]="employee.role" value="Employee" checked> Employee<br>
+  
+
+     
+      
+        <label for="experienc">Experience</label><br>
+        <input type="text" [(ngModel)]="employee.experience"class="form-control" id="experienc" placeholder="Enter Experience" name="experienc" #experienc="ngModel" required>
+        <div *ngIf="experienc.invalid && (experienc.dirty || experienc.touched)"
+        >
+    
+      <span *ngIf="experienc.errors.required"style="color:red">
+        experience is required.
+      </span>
+     </div>     
+      
+     <br>
+        <label for="noOfStudentTaught">No Of Student Taught</label><br>
+        <input type="text" [(ngModel)]="employee.noOfStudentTaught" class="form-control" id="noOfStudentTaught" placeholder="Enter No Of Student Taught" name="noOfStudentTaught"  #noOfStudentTaught="ngModel" required>
+    
+        <div *ngIf="noOfStudentTaught.invalid && (noOfStudentTaught.dirty || noOfStudentTaught.touched)"
+        >
+    
+      <span *ngIf="noOfStudentTaught.errors.required"style="color:red">
+        no Of Student Taught is required.
+      </span>
+     </div>     
+        <label for="noOfStudentPlaced">No Of Student Places</label>
+        <input type="text" [(ngModel)]="employee.noOfStudentPlaced"class="form-control" id="noOfStudentPlaced" placeholder="Enter No Of Student Placed" name="noOfStudentPlaced" #noOfStudentPlaced="ngModel" required>
+    
+        <div *ngIf="noOfStudentPlaced.invalid && (noOfStudentPlaced.dirty || noOfStudentPlaced.touched)"
+        >
+    
+      <span *ngIf="noOfStudentPlaced.errors.required"style="color:red">
+        no Of Student Placed is required.
+      </span>
+     </div>     
+      <br>
+      <button type="submit" [disabled]="!myForm.valid" class="btn btn-default" (click)="onSubmit()"
+>Register</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button type="submit"  (click)="loginCancel()" class="btn btn-danger">Cancel</button>
+    </form>&nbsp;
+  
+  </div>
+  
+  </body>
+  </html>

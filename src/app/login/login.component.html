@@ -1,0 +1,42 @@
+<html>
+<style>
+    div{
+      height: 40%px;
+      width: 30%;
+      background-color: goldenrod;
+      }
+</style>
+<body>  
+<div class="container">
+    <h2>User LogIn</h2>
+    <form #myForm="ngForm" action=""  method="post">
+      
+        <label for="firstName">Employee Name</label>
+        <input type="text" class="form-control" id="firstName" [(ngModel)]="employee.firstName" placeholder="Enter Name" name="firstName" #firstName="ngModel" required>
+        <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
+        >
+    
+      <span *ngIf="firstName.errors.required"style="color:red">
+        User Name is required
+      </span>
+     </div>     
+      
+    
+          <label for="password">Employee Password</label>
+          <input type="password" class="form-control" id="password" [(ngModel)]="employee.password" placeholder="Password" name="password" #password="ngModel" required>
+          <div *ngIf="password.invalid && (password.dirty || password.touched)"
+          >
+      
+        <span *ngIf="password.errors.required"style="color:red">
+          password required.
+        </span>
+       </div>     
+        
+      <br>
+        <button type="submit" [disabled]="!myForm.valid" (click)="loginUser(employee)" class="btn btn-default">LogIn</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="submit"  (click)="loginCancel()" class="btn btn-danger">Cancel</button>
+      </form>&nbsp;     
+</div> 
+</body> 
+</html>
+  

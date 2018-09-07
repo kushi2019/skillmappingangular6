@@ -1,0 +1,33 @@
+<style>
+  div.skil{
+    height: 20%px;
+    width: 50%;
+    margin-left:50%;
+    
+     }
+</style>  
+
+
+
+
+
+<form action=""  method="post">
+<button type="submit" class="btn btn-default" (click)="getRestItems()">List All Employees</button>
+</form>
+<div *ngIf="undefined===employee">Loading....</div>
+<div *ngIf="undefined !==employee">
+  <div class="row">
+  <div class="skil">
+
+  <ul>
+    <li *ngFor="let post of employee" >
+        
+ <h1>   {{post.empId}} {{post.firstName}}  {{post.lastName}} {{post.active}}</h1><a  href="#">click</a>
+
+  
+
+
+    </li>
+  </ul>
+</div>
+</div>
